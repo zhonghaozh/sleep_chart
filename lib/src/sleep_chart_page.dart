@@ -63,6 +63,8 @@ class SleepDurationPainter extends CustomPainter {
   final String Function(DateTime) dateFormatter;
 
   final double curveRadius;
+  /// 分钟单位
+  final String minuteUnit;
 
   double minuteWidth = 0.0;
 
@@ -136,6 +138,7 @@ class SleepDurationPainter extends CustomPainter {
     TextStyle? bottomInfoTextStyle,
     String Function(DateTime)? dateFormatter,
     this.indicatorPosition = 0.0, // 默认位置为0
+    this.minuteUnit = '分'
   })  : this.stageColors = stageColors ?? _defaultStageColors,
         this.bottomInfoTextStyle =
             bottomInfoTextStyle ?? _defaultBottomInfoTextStyle,
@@ -793,7 +796,7 @@ class SleepDurationPainter extends CustomPainter {
             style: textTitleMinuteStyle,
           ),
           TextSpan(
-            text: '分',
+            text: minuteUnit,
             style: textTitleStyle,
           ),
         ],
