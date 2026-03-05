@@ -1126,6 +1126,7 @@ class SleepDurationChartWidget extends StatefulWidget {
   final TextStyle? bottomInfoTextStyle; // 底部信息文本样式
   final String Function(DateTime)? dateFormatter; // 日期格式化函数
   final double curveRadius;
+  final String minuteUnit;
 
   const SleepDurationChartWidget({
     Key? key,
@@ -1151,6 +1152,7 @@ class SleepDurationChartWidget extends StatefulWidget {
     this.bottomInfoTextStyle,
     this.dateFormatter,
     this.curveRadius = 10,
+    this.minuteUnit = '分',
   }) : super(key: key);
 
   @override
@@ -1205,7 +1207,9 @@ class _SleepDurationChartWidgetState extends State<SleepDurationChartWidget> {
                 bottomInfoTextStyle: widget.bottomInfoTextStyle,
                 dateFormatter: widget.dateFormatter,
                 indicatorPosition: _indicatorPosition,
-                curveRadius: widget.curveRadius),
+                curveRadius: widget.curveRadius,
+                minuteUnit: widget.minuteUnit
+            ),
             size: Size(constraints.maxWidth, constraints.maxHeight),
           ),
         );
